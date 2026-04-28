@@ -1,8 +1,10 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/navber/NavBar";
-import Banner from "@/components/banner/Banner";
-import Footer from "@/components/footer/Footer";
+import NavBar from "../components/navber/NavBar";
+import Footer from "../components/footer/Footer";
+
+import Banner from "../components/banner/Banner";
+import TopCard from "../components/top-5-card/TopCard";
 
 const OutfitFont = Outfit({
 
@@ -24,7 +26,6 @@ export default function RootLayout({ children }) {
     >
       <body>
         <NavBar></NavBar>
-        <Banner></Banner>
         <main>{children}</main>
         <Footer></Footer>
       </body>
