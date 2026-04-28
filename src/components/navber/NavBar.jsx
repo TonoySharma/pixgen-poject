@@ -17,7 +17,7 @@ const NavBar = () => {
           />
           <h3 className="font-black text-2xl">
             <Link href={"/"}>
-            pix<span className="text-purple-600">gen</span>.
+            pix<span className="text-purple-600">gen</span>
             </Link>
           </h3>
         </div>

@@ -4,7 +4,7 @@ import NavBar from "../components/navber/NavBar";
 import Footer from "../components/footer/Footer";
 
 import Banner from "../components/banner/Banner";
-import TopCard from "../components/top-5-card/TopCard";
+
 
 const OutfitFont = Outfit({
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
     >
       <body>
         <NavBar></NavBar>
-        <main>{children}</main>
+        <main className="max-w-7xl mx-auto">{children}</main>
         <Footer></Footer>
       </body>
     </html>
