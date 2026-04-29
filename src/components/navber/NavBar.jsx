@@ -47,7 +47,7 @@ const NavBar = () => {
             <li>
               <Link className="border py-1 px-3 rounded-4xl border-purple-400
                bg-purple-100 hover:bg-purple-500 hover:text-white transform
-                duration-200" href={"/signin"}>SignIn</Link>
+                duration-200" href={"/login"}>LogIn</Link>
             </li>
           </ul>
         </div>

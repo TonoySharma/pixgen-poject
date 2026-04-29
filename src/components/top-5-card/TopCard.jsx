@@ -14,7 +14,7 @@ const TopCard = async () => {
 
 
     return (
-        <div className=" container mx-auto">
+        <div className=" max-w-7xl mx-auto">
             <h1 className='font-bold text-3xl text-center my-5'>Top Generations</h1>
 
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5'>
