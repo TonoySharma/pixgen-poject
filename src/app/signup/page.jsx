@@ -15,6 +15,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { signUp } from "../../lib/auth-client";
 import { useRouter } from "next/navigation";
+import { MdOutlineLockReset } from "react-icons/md";
 
 
 
@@ -26,17 +27,17 @@ const RegisterPage = () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
-     console.log(userData);
+    console.log(userData);
 
     const { data, error } = await signUp.email({
       name: userData.name, // required
       email: userData.email, // required
-      image:  userData.image,
+      image: userData.image,
       password: userData.password, // required
-     
+
     })
     // console.log(data, error , "signup register")
-    if(!error){
+    if (!error) {
       router.push('/')
     }
 
@@ -73,7 +74,7 @@ const RegisterPage = () => {
             <Input placeholder="Enter Your Name" />
             <FieldError />
           </TextField>
-          
+
           {/* photo */}
           <TextField
             isRequired
@@ -151,7 +152,7 @@ const RegisterPage = () => {
               className="w-full rounded-2xl bg-indigo-100 text-black
                              hover:bg-indigo-700 hover:text-white border border-blue-400
                               transition-all duration-200">
-              <Check className="mr-2" />
+              <Check />
               Register
             </Button>
 
@@ -161,6 +162,7 @@ const RegisterPage = () => {
               className="w-full rounded-2xl bg-indigo-100 text-black
                              hover:bg-indigo-700 hover:text-white border border-blue-400
                               transition-all duration-200">
+                                 <MdOutlineLockReset/>
               Reset
             </Button>
           </div>

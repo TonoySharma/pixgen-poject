@@ -11,9 +11,11 @@ import {
     TextField,
 } from "@heroui/react";
 import Link from "next/link";
-
 import { useState } from "react";
 import { signIn, signUp } from "../../lib/auth-client";
+import { FcGoogle } from "react-icons/fc";
+import { CiLogin } from "react-icons/ci";
+import { MdOutlineLockReset } from "react-icons/md";
 
 
 const LoginPage = () => {
@@ -25,9 +27,9 @@ const LoginPage = () => {
         console.log(userData);
 
         const { data, error } = await signIn.email({
-            email: userData.email, 
+            email: userData.email,
             password: userData.password,
-             remember: true,
+            remember: true,
             callbackURL: "/",
         })
         // console.log(data, error , "signup register")
@@ -49,7 +51,7 @@ const LoginPage = () => {
               bg-gradient-to-br from-indigo-100 via-white to-emerald-100 ">
 
                 <h1 className="text-2xl font-bold text-center mb-5 ">
-                   Login your account
+                    Login your account
                 </h1>
 
                 <Form className="flex flex-col gap-5" onSubmit={onSubmit}>
@@ -117,8 +119,8 @@ const LoginPage = () => {
                             className="w-full rounded-2xl bg-indigo-100 text-black
                              hover:bg-indigo-700 hover:text-white border border-blue-400
                               transition-all duration-200">
-                            <Check className="mr-2" />
-                            Register
+                            <CiLogin />
+                            Login
                         </Button>
 
                         <Button
@@ -127,20 +129,17 @@ const LoginPage = () => {
                             className="w-full rounded-2xl bg-indigo-100 text-black
                              hover:bg-indigo-700 hover:text-white border border-blue-400
                               transition-all duration-200">
+                                <MdOutlineLockReset/>
                             Reset
                         </Button>
                     </div>
+                    <Button className="w-full rounded-2xl bg-pink-100 text-black
+                             hover:bg-pink-500 hover:text-white border border-pink-400
+                              transition-all duration-200" variant="">
+                           <FcGoogle />
+                           Sign in with Google
+                    </Button>
                 </Form>
-
-                {/* Footer */}
-                <p className="text-xs text-gray-500 text-center mt-6">
-                    Already have an account?{" "}
-                    <Link href="/login">
-                        <span className="text-indigo-600 cursor-pointer hover:underline">
-                            Login
-                        </span>
-                    </Link>
-                </p>
 
             </div>
         </div>
